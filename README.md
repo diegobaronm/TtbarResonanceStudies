@@ -92,9 +92,28 @@ analysis_app /path/to/sample.root /path/to/hists.root h
 
 ## 2) Generate samples with HTCondor
 
-Generation scripts are in `Generate/`.
+### Step 2.0: Install Pythia8 and Delphes
+
+Note: In case you want to generate detector-level simulations run these steps, otherwise just go to Step 2.1.
+
+Make sure you have a `miniconda` installation. In case you don't have one please follow [this instructions](https://www.anaconda.com/docs/getting-started/miniconda/install/linux-install).
+
+Execute the detector-level installation script:
+
+```
+chmod +x InstallDetectorSim.sh
+./InstallDetectorSim.sh
+```
+
+Once finished, you can activate the `mc_gen` environment to generate detector-level events.
+
+```
+conda activate mc_gen
+```
 
 ### Step 2.1: Go to submission directory
+
+Generation scripts are in `Generate/`.
 
 ```bash
 cd Generate
